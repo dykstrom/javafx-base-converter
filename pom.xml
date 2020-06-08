@@ -71,6 +71,9 @@
                 <configuration>
                     <mainClass>se.dykstrom.javafx.App</mainClass>
                     <executable>${java.home}/bin/java</executable>
+                    <options>
+                        <option>--enable-preview</option>
+                    </options>
                 </configuration>
             </plugin>
         </plugins>
