@@ -16,6 +16,9 @@
 
 package se.dykstrom.javafx;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.beans.InvalidationListener;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -27,9 +30,6 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import se.dykstrom.javafx.service.ConversionService;
 import se.dykstrom.javafx.service.ConversionServiceImpl;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 /**
  * A controller class for the main view.

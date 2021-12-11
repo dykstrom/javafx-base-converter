@@ -16,6 +16,8 @@
 
 package se.dykstrom.javafx;
 
+import java.util.List;
+
 import javafx.animation.Transition;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
@@ -25,8 +27,6 @@ import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Paint;
 import javafx.scene.paint.Stop;
 import javafx.util.Duration;
-
-import java.util.List;
 
 /**
  * A transition that briefly changes that color of a text field, and makes it blink.
@@ -70,8 +70,7 @@ class ColorBlinkTransition extends Transition {
     }
 
     /**
-     * Finds out the start color from the given text field. If the start color cannot be determined,
-     * {@link Color#WHITE} is returned.
+     * Finds out the start color from the given text field.
      */
     private Color getStartColor(TextField textField) {
         List<BackgroundFill> fills = textField.getBackground().getFills();
@@ -82,8 +81,7 @@ class ColorBlinkTransition extends Transition {
             List<Stop> stops = gradient.getStops();
             return stops.get(stops.size() - 1).getColor();
         }
-        System.err.println("Unsupported paint class: " + paint.getClass().getName());
-        return Color.WHITE;
+        throw new IllegalArgumentException("Unsupported paint class: " + paint.getClass().getName());
     }
 
     /**
